@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Our Distributor Network | Kirti Gold Industries</title>
+  <meta name="description" content="Become an authorized Kirti Gold distributor. Apply online to join our retail network spanning Maharashtra, Karnataka, Telangana, AP, MP, and Gujarat.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/logo2.png">
+  <link rel="apple-touch-icon" href="/images/logo2.png">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="sticky">
+    <div class="container nav-container">
+      <a href="/" class="logo-wrapper">
+        <img src="/images/logo2.png" alt="Kirti Gold Logo" class="header-logo-img">
+        <div class="logo-text-group">
+          <span class="text-gradient" style="font-family: var(--font-headings); font-weight: 800; font-size: 1.3rem;">KIRTI GOLD</span>
+          <span style="font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted);">INDUSTRIES</span>
+        </div>
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/products" class="nav-link">Products</a></li>
+          <li><a href="/about" class="nav-link">About Us</a></li>
+          <li><a href="/network" class="nav-link active">Join Network</a></li>
+          <li><a href="/admin" class="btn btn-nav">Admin Panel</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="section" style="padding-top: 8rem; padding-bottom: 3rem; background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%); border-bottom: 1px solid var(--dark-border);">
+    <div class="container text-center">
+      <h1 class="text-gradient" style="font-size: 3rem; margin-bottom: 1rem;">PARTNER WITH US</h1>
+      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Join a legacy of 50+ years. Apply to become an authorized regional distributor or wholesale merchant partner.</p>
+    </div>
+  </section>
+
+  <!-- Interactive Map & Territory Section -->
+  <section class="section reveal fade-up">
+    <div class="container grid-2" style="align-items: center;">
+      <div>
+        <h2 class="text-gradient mb-1" style="font-size: 2rem;">OPERATIONAL STATES</h2>
+        <h3 class="mb-3" style="font-weight: 500; color: var(--text-secondary);">Direct supply chains connecting major consumer markets in India.</h3>
+        <p class="mb-3" style="color: var(--text-secondary);">We maintain highly optimized regional cold storages and packaging hubs across our active territories to guarantee zero-delay retail supplies.</p>
+        <p class="mb-4" style="color: var(--text-muted); font-size: 0.95rem;">Click on any active state in the statistics box to inspect local logistics, distribution footprints, and regional warehouse infrastructure.</p>
+
+        <!-- Dynamic State logistics box -->
+        <div style="background: var(--dark-card); border: 1px solid var(--dark-border); padding: 2rem; border-radius: 12px; margin-top: 2rem;" id="stateLogisticsBox">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">Selected Territory Details:</span>
+          <h3 style="font-size: 1.5rem; margin: 0.3rem 0 1rem 0;" id="activeStateName">Maharashtra (HQ)</h3>
+          
+          <div class="grid-2" style="gap: 1rem;" id="activeStateStats">
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+              <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">Regional Distributors</span>
+              <strong style="font-size: 1.3rem; color: var(--text-primary);">400+ Authorized</strong>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+              <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">Fulfillment Hubs</span>
+              <strong style="font-size: 1.3rem; color: var(--text-primary);">Latur, Solapur, Pune</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- India Highlight Map Container -->
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="map-container">
+          <!-- Premium Visual territory grid using CSS list selector for visual mockup -->
+          <div style="padding: 2.5rem; text-align: center; max-width: 450px;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🗺️</div>
+            <h3 style="color: var(--primary); margin-bottom: 0.8rem;">Select Active Territory Below:</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-top: 1rem;">
+              <button class="filter-btn active" onclick="selectTerritory('Maharashtra', '400+', 'Primary Refinery (Latur), Solapur, Pune, Mumbai', this)">Maharashtra (HQ)</button>
+              <button class="filter-btn" onclick="selectTerritory('Karnataka', '250+', 'Bengaluru Storage, Hubballi Packing Hub', this)">Karnataka</button>
+              <button class="filter-btn" onclick="selectTerritory('Telangana', '180+', 'Hyderabad Central Depot, Warangal Storage', this)">Telangana</button>
+              <button class="filter-btn" onclick="selectTerritory('Andhra Pradesh', '150+', 'Vijayawada Depot, Visakhapatnam Warehouse', this)">Andhra Pradesh</button>
+              <button class="filter-btn" onclick="selectTerritory('Madhya Pradesh', '120+', 'Indore Sourcing Yard, Bhopal Cold Storage', this)">Madhya Pradesh</button>
+              <button class="filter-btn" onclick="selectTerritory('Gujarat', '100+', 'Ahmedabad Storage, Surat Local Depot', this)">Gujarat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Distributor Form Section -->
+  <section class="section reveal fade-up" id="applicationFormSection" style="background-color: var(--dark-bg); border-top: 1px solid var(--dark-border);">
+    <div class="container grid-2" style="align-items: center;">
+      <div>
+        <h2 class="text-gradient mb-1" style="font-size: 2.5rem; text-transform: uppercase;">Apply for Dealership</h2>
+        <h3 class="mb-3" style="font-weight: 500; font-size: 1.6rem; color: var(--text-secondary);">Expand your business operations with India's most stable edible oil brand.</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 32px; height: 32px; background: rgba(212, 175, 55, 0.08); border: 1px solid var(--dark-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 700; flex-shrink: 0;">1</div>
+            <div>
+              <h4 style="margin-bottom: 0.2rem;">Complete Form Submission</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Fill in company demographics, targeted investment capabilities, and distribution logistics expertise.</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 32px; height: 32px; background: rgba(212, 175, 55, 0.08); border: 1px solid var(--dark-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 700; flex-shrink: 0;">2</div>
+            <div>
+              <h4 style="margin-bottom: 0.2rem;">Feasibility Evaluation</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Our regional supply heads inspect targeted operational logistics, storage space, and municipal licenses.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 32px; height: 32px; background: rgba(212, 175, 55, 0.08); border: 1px solid var(--dark-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 700; flex-shrink: 0;">3</div>
+            <div>
+              <h4 style="margin-bottom: 0.2rem;">Agreement Sign-off</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Sign authorized dealership agreements, confirm security allocations, and initiate regional setup.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: var(--dark-card); border: 1px solid var(--dark-border); padding: 3rem; border-radius: 12px;">
+        <h3 class="text-gradient mb-3" style="font-size: 1.5rem;">Distributor Onboarding Application</h3>
+        <form id="distributorForm">
+          <div class="form-group">
+            <label class="form-label" for="distCompany">Company Registered Name *</label>
+            <input type="text" id="distCompany" class="form-control" required placeholder="e.g. Balaji Trading Corp">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="distPerson">Contact Person Name *</label>
+            <input type="text" id="distPerson" class="form-control" required placeholder="e.g. Ramesh Patel">
+          </div>
+          <div class="grid-2" style="gap: 1rem; margin-bottom: 0.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="distEmail">E-mail Address *</label>
+              <input type="email" id="distEmail" class="form-control" required placeholder="info@company.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="distPhone">Phone / Mobile *</label>
+              <input type="tel" id="distPhone" class="form-control" required placeholder="10-digit mobile number">
+            </div>
+          </div>
+          <div class="grid-2" style="gap: 1rem; margin-bottom: 0.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="distState">Select Targeted State *</label>
+              <select id="distState" class="form-control" required>
+                <option value="">-- Choose State --</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Gujarat">Gujarat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="distCity">City / Town *</label>
+              <input type="text" id="distCity" class="form-control" required placeholder="e.g. Pune / Nagpur">
+            </div>
+          </div>
+          <div class="grid-2" style="gap: 1rem; margin-bottom: 0.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="distExp">Years of FMCG Experience *</label>
+              <input type="number" id="distExp" class="form-control" required min="0" placeholder="e.g. 5">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="distInvestment">Capital Investment Budget *</label>
+              <select id="distInvestment" class="form-control" required>
+                <option value="5-10 Lakhs">INR 5 - 10 Lakhs</option>
+                <option value="10-25 Lakhs">INR 10 - 25 Lakhs</option>
+                <option value="25-50 Lakhs">INR 25 - 50 Lakhs</option>
+                <option value="50+ Lakhs">INR 50+ Lakhs</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="distMsg">Storage Space & Warehouse Details</label>
+            <textarea id="distMsg" rows="3" class="form-control" placeholder="Specify square footage, current storage type, commercial vehicles owned..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Partnership Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo text-gradient">KIRTI GOLD</div>
+        <p class="footer-about">India's leading edible oil and high protein de-oiled cake manufacturer since 1970. Delivering pure, natural, and nutrient-rich cooking mediums across 6 states.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon">F</a>
+          <a href="#" class="social-icon">I</a>
+          <a href="#" class="social-icon">Y</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-title">Products</h4>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="/products">Rice Bran Oil</a></li>
+          <li class="footer-link"><a href="/products">Sunflower Oil</a></li>
+          <li class="footer-link"><a href="/products">Soyabean Oil</a></li>
+          <li class="footer-link"><a href="/products">Groundnut Oil</a></li>
+          <li class="footer-link"><a href="/products">Cottonseed Oil</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="/about">Our Legacy</a></li>
+          <li class="footer-link"><a href="/about#infrastructure">Infrastructure</a></li>
+          <li class="footer-link"><a href="/network">Join Our Network</a></li>
+          <li class="footer-link"><a href="/#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Newsletter</h4>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">Subscribe to get corporate updates and crop pricing reports.</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required>
+          <button type="submit" class="newsletter-btn">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>Copyright &copy; 2026 Kirti Gold Industries. All Rights Reserved.</span>
+      <span>Designed with Excellence</span>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+
+  <script>
+    // Map Territory highlighting
+    function selectTerritory(stateName, distributors, hubs, element) {
+      document.querySelectorAll('.map-container button').forEach(b => b.classList.remove('active'));
+      if (element) element.classList.add('active');
+
+      const nameEl = document.getElementById('activeStateName');
+      const statsEl = document.getElementById('activeStateStats');
+
+      if (nameEl) nameEl.innerText = stateName;
+      if (statsEl) {
+        statsEl.innerHTML = `
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+            <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">Regional Distributors</span>
+            <strong style="font-size: 1.3rem; color: var(--text-primary);">${distributors} Authorized</strong>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+            <span style="display: block; font-size: 0.8rem; color: var(--text-muted);">Fulfillment Hubs</span>
+            <strong style="font-size: 1.1rem; color: var(--text-primary);">${hubs}</strong>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

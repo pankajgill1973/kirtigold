@@ -1,0 +1,30 @@
+[
+  {
+    "id": "APP-1780033865464",
+    "companyName": "Vikas Trading Co",
+    "contactPerson": "Vikas Patil",
+    "email": "vikas@vikastrading.com",
+    "phone": "9822110022",
+    "state": "Maharashtra",
+    "city": "Kolhapur",
+    "experience": "12",
+    "investment": "10-25 Lakhs",
+    "message": "We own a 1500 sq ft warehouse and 2 delivery pick-ups.",
+    "createdAt": "2026-05-29T05:51:05.464Z",
+    "status": "Pending"
+  },
+  {
+    "id": "APP-1780037370582",
+    "companyName": "manepratham454-sys's Org",
+    "contactPerson": "Pratham mane",
+    "email": "manepratham454@gmail.com",
+    "phone": "08793228178",
+    "state": "Maharashtra",
+    "city": "Pimpri-Chinchwad",
+    "experience": "4",
+    "investment": "50+ Lakhs",
+    "message": "go down",
+    "createdAt": "2026-05-29T06:49:30.582Z",
+    "status": "Pending"
+  }
+]

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products | Kirti Gold Industries</title>
+  <meta name="description" content="Explore Kirti Gold's premium product portfolio: physically refined Rice Bran Oil, Sunflower Oil, Soyabean Oil, Filtered Groundnut Oil, Chana Dal, Besan, and packaged drinking water.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/logo2.png">
+  <link rel="apple-touch-icon" href="/images/logo2.png">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="sticky">
+    <div class="container nav-container">
+      <a href="/" class="logo-wrapper">
+        <img src="/images/logo2.png" alt="Kirti Gold Logo" class="header-logo-img">
+        <div class="logo-text-group">
+          <span class="text-gradient" style="font-family: var(--font-headings); font-weight: 800; font-size: 1.3rem;">KIRTI GOLD</span>
+          <span style="font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted);">INDUSTRIES</span>
+        </div>
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/products" class="nav-link active">Products</a></li>
+          <li><a href="/about" class="nav-link">About Us</a></li>
+          <li><a href="/network" class="nav-link">Join Network</a></li>
+          <li><a href="/admin" class="btn btn-nav">Admin Panel</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="section" style="padding-top: 8rem; padding-bottom: 3rem; background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%); border-bottom: 1px solid var(--dark-border);">
+    <div class="container text-center">
+      <h1 class="text-gradient" style="font-size: 3rem; margin-bottom: 1rem;">OUR PRODUCTS</h1>
+      <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Purity and health sealed in every pack. Explore our standard-accredited product portfolio.</p>
+    </div>
+  </section>
+
+  <!-- Products Catalog Section -->
+  <section class="section">
+    <div class="container">
+      
+      <!-- Search & Category Filters -->
+      <div class="search-bar-container">
+        <input type="text" id="catalogSearch" class="search-input" placeholder="Search products by name, category, or benefits...">
+      </div>
+
+      <div class="filter-tabs">
+        <button class="filter-btn active" onclick="filterCatalog('all', this)">All Products</button>
+        <button class="filter-btn" onclick="filterCatalog('edible-oil', this)">Edible Oils</button>
+        <button class="filter-btn" onclick="filterCatalog('pulses', this)">Pulses & Besan</button>
+        <button class="filter-btn" onclick="filterCatalog('water', this)">Drinking Water</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid-3" id="productsCatalogGrid">
+        <!-- 1. Rice Bran Oil -->
+        <div class="product-card reveal fade-up delay-100" data-category="edible-oil">
+          <div class="product-image-box">
+            <img src="/images/products/rice-bran-oil.png" alt="Rice Bran Oil" class="product-img">
+            <div class="product-badge">Oryzanol Rich</div>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Edible Oil</span>
+            <h3 class="product-name">Physically Refined Rice Bran Oil</h3>
+            <p class="product-excerpt">An exceptionally healthy oil refined with physical processes to secure maximum natural Oryzanol content, regulating cholesterol levels.</p>
+            <div class="product-footer">
+              <span style="font-size: 0.85rem; color: var(--primary); font-weight: 500;">CAT Technology</span>
+              <button onclick="openProductDetail('Physically Refined Rice Bran Oil', 'Extracted from the nutrient-dense outer bran layer of rice, Kirti Gold physically refined Rice Bran Oil is rich in Oryzanol (14,000 ppm) which actively aids cholesterol management and cardiovascular health. High smoke point makes it the premium choice for stir-frying and deep-frying in modern wellness lifestyles.', 'Edible Oil', '/images/products/rice-bran-oil.png', [{key: 'Oryzanol', value: '14,000 ppm'}, {key: 'Vitamin E', value: 'High'}, {key: 'Saturated Fat', value: 'Low'}], ['1 Litre Pouch', '5 Litre Jar', '15 Litre Tin'], 'Due to its high smoke point of 232°C (450°F), Physically Refined Rice Bran Oil is perfect for crisp stir-frying and traditional deep-frying without developing a burnt aroma. It retains natural food flavors beautifully.')" class="btn btn-primary btn-card">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Refined Sunflower Oil -->
+        <div class="product-card reveal fade-up delay-200" data-category="edible-oil">
+          <div class="product-image-box">
+            <img src="/images/products/sunflower-oil.png" alt="Sunflower Oil" class="product-img">
+            <div class="product-badge">Premium Grade</div>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Edible Oil</span>
+            <h3 class="product-name">Refined Sunflower Oil</h3>
+            <p class="product-excerpt">Enriched with Vitamins A, D, and E. Low absorption formulation ensures your family receives light, low-fat delicious meals daily.</p>
+            <div class="product-footer">
+              <span style="font-size: 0.85rem; color: var(--primary); font-weight: 500;">Low Absorption</span>
+              <button onclick="openProductDetail('Refined Sunflower Oil', 'Refined Sunflower Oil is pressed from premium sunflower seeds, rich in polyunsaturated fatty acids (PUFA) and fortified with Vitamins A, D, and E. It boasts high thermal stability, meaning the oil absorbs less in fried foods, keeping them light and delicious.', 'Edible Oil', '/images/products/sunflower-oil.png', [{key: 'PUFA', value: 'High'}, {key: 'Vitamins', value: 'A, D & E Fortified'}, {key: 'Absorption', value: 'Low'}], ['1 Litre Pouch', '5 Litre Jar', '15 Litre Tin'], 'Sunflower Oil is exceptionally light and perfect for daily tempering (tadka) and baking. Fortified with Vitamin A & D, it helps support immune health with minimal greasy feel.')" class="btn btn-primary btn-card">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Refined Soyabean Oil -->
+        <div class="product-card reveal fade-up delay-300" data-category="edible-oil">
+          <div class="product-image-box">
+            <img src="/images/products/soyabin-oil.png" alt="Soyabean Oil" class="product-img">
+            <div class="product-badge">Daily Health</div>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Edible Oil</span>
+            <h3 class="product-name">Refined Soyabean Oil</h3>
+            <p class="product-excerpt">Highly rich in Omega-3 and essential polyunsaturated fats, supporting heart functions and providing natural nutrition.</p>
+            <div class="product-footer">
+              <span style="font-size: 0.85rem; color: var(--primary); font-weight: 500;">Omega-3 Enriched</span>
+              <button onclick="openProductDetail('Refined Soyabean Oil', 'Refined Soyabean Oil is a light vegetable oil high in polyunsaturated and monounsaturated fats. It offers a balanced ratio of Omega-3 and Omega-6 fatty acids which aid heart health and cognitive function, making it an excellent all-purpose cooking oil.', 'Edible Oil', '/images/products/soyabin-oil.png', [{key: 'Omega 3', value: 'Optimal Ratio'}, {key: 'PUFA', value: 'High'}, {key: 'Monounsaturated', value: 'Moderate'}], ['1 Litre Pouch', '5 Litre Jar', '15 Litre Jar'], 'A fantastic, heart-healthy option for general pan-searing and sauteing, containing rich polyunsaturated fatty acids (Omega-3) that support cognitive and cardiac wellness.')" class="btn btn-primary btn-card">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Filtered Groundnut Oil -->
+        <div class="product-card reveal fade-up delay-100" data-category="edible-oil">
+          <div class="product-image-box">
+            <img src="/images/products/filtered-groundnut-oil.png" alt="Filtered Groundnut Oil" class="product-img">
+            <div class="product-badge">Aromatic</div>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Edible Oil</span>
+            <h3 class="product-name">Filtered Groundnut Oil</h3>
+            <p class="product-excerpt">Crafted from premium groundnuts, rich in vitamins, capturing the original sweet aroma and rich nutrient-profile.</p>
+            <div class="product-footer">
+              <span style="font-size: 0.85rem; color: var(--primary); font-weight: 500;">Original Taste</span>
+              <button onclick="openProductDetail('Filtered Groundnut Oil', 'Filtered Groundnut Oil is extracted using traditional quality benchmarks from the finest domestic peanuts, preserving its rich aroma, flavor, and naturally occurring Vitamin E, A, and D profiles untouched.', 'Edible Oil', '/images/products/filtered-groundnut-oil.png', [{key: 'Vitamin E', value: 'Excellent'}, {key: 'Processing', value: 'Filtered'}, {key: 'Aroma', value: 'Rich Sweet'}], ['1 Litre Pouch', '5 Litre Pouch', '15 Litre Tin'], 'Rich in monounsaturated fats (MUFA), Filtered Groundnut Oil is perfect for sautéing, deep frying, and regional tempering. Its authentic earthy aroma enhances signature groundnut chutneys and Maharashtrian specialties.')" class="btn btn-primary btn-card">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Refined Cottonseed Oil -->
+        <div class="product-card reveal fade-up delay-200" data-category="edible-oil">
+          <div class="product-image-box">
+            <img src="/images/products/cottonseed-oil.png" alt="Refined Cottonseed Oil" class="product-img">
+            <div class="product-badge">Light Digest</div>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Edible Oil</span>
+            <h3 class="product-name">Refined Cottonseed Oil</h3>
+            <p class="product-excerpt">Refined from cotton plant seeds, containing natural tocopherols, excellent stability, and ideal as a salad oil.</p>
+            <div class="product-footer">
+              <span style="font-size: 0.85rem; color: var(--primary); font-weight: 500;">High Stability</span>
+              <button onclick="openProductDetail('Refined Cottonseed Oil', 'Refined Cottonseed Oil is highly popular in catering due to its extreme temperature stability and low absorption metrics, keeping fried items crunchy and fresh for a long time.', 'Edible Oil', '/images/products/cottonseed-oil.png', [{key: 'Stability', value: 'High Thermal'}, {key: 'Cholesterol', value: 'Zero'}, {key: 'Vitamin E', value: 'Present'}], ['1 Litre Pouch', '15 Litre Tin', '15 Litre Jar'], 'Cottonseed Oil exhibits excellent frying stability and low flavour transfer. Ideal for light Indian snacks, chiwda, and high-volume commercial frying where crunchiness and shelf-life are priorities.')" class="btn btn-primary btn-card">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Besan -->
+        <div class="product-card reveal fade-up delay-300" data-category="pulses">
+          <div class="product-image-box">
+            <img src="/images/products/besan.png" alt="Kirti Besan" class="product-img">
+            <div class="product-badge">High Protein</div>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Pulses & Flour</span>
+            <h3 class="product-name">Premium Besan (Gram Flour)</h3>
+            <p class="product-excerpt">Milled from organic Chana Dal using advanced grinding machines. Assures light textures and high nutritious protein values.</p>
+            <div class="product-footer">
+              <span style="font-size: 0.85rem; color: var(--primary); font-weight: 500;">100% Pure Chana</span>
+              <button onclick="openProductDetail('Premium Besan (Gram Flour)', 'Kirti Gold Besan is processed from pure, double-polished Bengal gram lentils. It has high binding characteristics and excellent dietary fiber density, perfect for classic Indian dishes and sweet delicacies.', 'Pulses & Flour', '/images/products/besan.png', [{key: 'Ingredients', value: '100% Bengal Gram'}, {key: 'Protein', value: 'High'}, {key: 'Fiber', value: 'Rich'}], ['500g Pack', '1kg Pack', '30kg Bulk bag'], 'Perfect for making fluffy pakoras, traditional besan ladoos, and kadhi. Its high-grade double polishing ensures smooth lump-free batter blending with excellent cooking properties.')" class="btn btn-primary btn-card">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Chana Dal -->
+        <div class="product-card reveal fade-up delay-100" data-category="pulses">
+          <div class="product-image-box">
+            <img src="/images/products/chana-dal.png" alt="Chana Dal" class="product-img">
+            <div class="product-badge">Staple Choice</div>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Pulses & Flour</span>
+            <h3 class="product-name">Double-Polished Chana Dal</h3>
+            <p class="product-excerpt">Finest selection Bengal Gram lentils, rigorously cleaned and sorted, preserving essential dietary fiber and vitamins.</p>
+            <div class="product-footer">
+              <span style="font-size: 0.85rem; color: var(--primary); font-weight: 500;">Sieve Sorted</span>
+              <button onclick="openProductDetail('Double-Polished Chana Dal', 'Double-Polished Chana Dal is rich in vegetarian proteins, slow-digesting carbohydrates, and vitamins. Ideal for wholesome home cooking, high-nutrition standards, and gluten-free diets.', 'Pulses & Flour', '/images/products/chana-dal.png', [{key: 'Protein', value: '22g per 100g'}, {key: 'Fiber', value: '12g per 100g'}, {key: 'Purity', value: 'Sieve Cleaned'}], ['1kg Pouch', '30kg Bulk Sack'], 'Rich in vegetable proteins, slow-digesting carbs, and low glycemic indexes. Excellent for nutritious dal fry, puran poli stuffings, and roasting for regional chutneys.')" class="btn btn-primary btn-card">View Specs</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Kirti Gold Aqua -->
+        <div class="product-card reveal fade-up delay-200" data-category="water">
+          <div class="product-image-box">
+            <img src="/images/products/aqua.png" alt="Kirti Aqua" class="product-img">
+            <div class="product-badge">Fresh Purity</div>
+          </div>
+          <div class="product-body">
+            <span class="product-cat">Drinking Water</span>
+            <h3 class="product-name">Kirti Gold Aqua</h3>
+            <p class="product-excerpt">Packaged drinking water processed through multi-stage RO filtration and UV purification systems, preserving pure refreshment.</p>
+            <div class="product-footer">
+              <span style="font-size: 0.85rem; color: var(--primary); font-weight: 500;">RO + UV + Minerals</span>
+              <button onclick="openProductDetail('Kirti Gold Aqua', 'Kirti Gold Aqua packaged drinking water is purified with premium quality filtration protocols including active carbon filters, micro-filtration, reverse osmosis, and ultraviolet sanitation, fortified with essential digestive minerals.', 'Drinking Water', '/images/products/aqua.png', [{key: 'Sanitation', value: 'RO + UV Protected'}, {key: 'Minerals', value: 'Added Electrolytes'}, {key: 'pH Level', value: '7.2 Balanced'}], ['500ml Bottle', '1 Litre Bottle', '20 Litre Can'], 'Our packaged drinking water is purified through state-of-the-art RO and UV sanitizers, keeping mineral content balanced and light for instant cellular hydration.')" class="btn btn-primary btn-card">View Specs</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inquiry Grid Anchor -->
+  <section class="section" id="enquiry" style="background-color: var(--dark-bg); border-top: 1px solid var(--dark-border);">
+    <div class="container grid-2" style="align-items: center;">
+      <div>
+        <h2 class="text-gradient mb-2" style="font-size: 2.2rem; text-transform: uppercase;">Place an Inquiry</h2>
+        <p class="mb-3" style="color: var(--text-secondary);">Interested in placing bulk orders or buying retail stocks? Tell us your product requirements, and our regional sales executives will contact you within 24 hours.</p>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--dark-border); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">For Direct Sales Support:</h4>
+          <span style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">cpd@kirtigroup.com</span>
+        </div>
+      </div>
+      <div style="background: var(--dark-card); border: 1px solid var(--dark-border); padding: 2.5rem; border-radius: 12px;">
+        <h3 class="text-gradient mb-3" style="font-size: 1.4rem;">Fast Order Request</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label class="form-label" for="enqName">Your Name *</label>
+            <input type="text" id="enqName" class="form-control" required placeholder="Name">
+          </div>
+          <div class="grid-2" style="gap: 1rem; margin-bottom: 0.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="enqEmail">Email *</label>
+              <input type="email" id="enqEmail" class="form-control" required placeholder="email@address.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="enqPhone">Phone</label>
+              <input type="tel" id="enqPhone" class="form-control" placeholder="Mobile">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="enqProduct">Select Product</label>
+            <select id="enqProduct" class="form-control">
+              <option value="Physically Refined Rice Bran Oil">Physically Refined Rice Bran Oil</option>
+              <option value="Refined Sunflower Oil">Refined Sunflower Oil</option>
+              <option value="Refined Soyabean Oil">Refined Soyabean Oil</option>
+              <option value="Filtered Groundnut Oil">Filtered Groundnut Oil</option>
+              <option value="Refined Cottonseed Oil">Refined Cottonseed Oil</option>
+              <option value="Premium Besan (Gram Flour)">Premium Besan (Gram Flour)</option>
+              <option value="Double-Polished Chana Dal">Double-Polished Chana Dal</option>
+              <option value="Kirti Gold Aqua">Kirti Gold Aqua</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="enqMessage">Detailed Quantity & Location *</label>
+            <textarea id="enqMessage" rows="3" class="form-control" required placeholder="Specify boxes, pouches, bulk tonnes, and delivery city..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo text-gradient">KIRTI GOLD</div>
+        <p class="footer-about">India's leading edible oil and high protein de-oiled cake manufacturer since 1970. Delivering pure, natural, and nutrient-rich cooking mediums across 6 states.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon">F</a>
+          <a href="#" class="social-icon">I</a>
+          <a href="#" class="social-icon">Y</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-title">Products</h4>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="/products">Rice Bran Oil</a></li>
+          <li class="footer-link"><a href="/products">Sunflower Oil</a></li>
+          <li class="footer-link"><a href="/products">Soyabean Oil</a></li>
+          <li class="footer-link"><a href="/products">Groundnut Oil</a></li>
+          <li class="footer-link"><a href="/products">Cottonseed Oil</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="/about">Our Legacy</a></li>
+          <li class="footer-link"><a href="/about#infrastructure">Infrastructure</a></li>
+          <li class="footer-link"><a href="/network">Join Our Network</a></li>
+          <li class="footer-link"><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Newsletter</h4>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">Subscribe to get corporate updates and crop pricing reports.</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required>
+          <button type="submit" class="newsletter-btn">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>Copyright &copy; 2026 Kirti Gold Industries. All Rights Reserved.</span>
+      <span>Designed with Excellence</span>
+    </div>
+  </footer>
+
+  <!-- Product Specifications Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeProductModal()">&times;</span>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-img-container">
+            <img src="" alt="Product Detail" id="modalImg" class="modal-img">
+          </div>
+          <div>
+            <span id="modalCat" style="color: var(--primary); text-transform: uppercase; font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px;">Category</span>
+            <h3 id="modalTitle" style="font-size: 1.8rem; margin: 0.5rem 0 1rem 0;">Product Name</h3>
+            <p id="modalDesc" style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5;">Product description content...</p>
+            
+            <h4 style="font-size: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.3rem;">Key Specifications:</h4>
+            <ul id="modalNutrition" style="list-style: none; margin-bottom: 1.5rem; font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.4rem;">
+              <!-- Javascript injected specs -->
+            </ul>
+
+            <h4 style="font-size: 1rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.3rem;">Available Packaging:</h4>
+            <div id="modalPackaging" style="margin-bottom: 2rem;">
+              <!-- Javascript injected packages -->
+            </div>
+
+            <a href="#enquiry" onclick="closeProductModal()" class="btn btn-primary" style="width: 100%; text-align: center;">Send Order Enquiry</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+  
+  <script>
+    // Live Search and Category Filter logic
+    function filterCatalog(category, btn) {
+      // Toggle Active buttons
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const searchVal = document.getElementById('catalogSearch').value.toLowerCase();
+      const cards = document.querySelectorAll('.product-card');
+
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        const cardText = card.innerText.toLowerCase();
+        
+        const matchesCategory = (category === 'all' || cardCat === category);
+        const matchesSearch = cardText.includes(searchVal);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Bind Search Input
+    document.getElementById('catalogSearch').addEventListener('input', () => {
+      const activeFilterBtn = document.querySelector('.filter-btn.active');
+      let activeCategory = 'all';
+      if (activeFilterBtn.innerText.includes('Oil')) activeCategory = 'edible-oil';
+      else if (activeFilterBtn.innerText.includes('Pulses')) activeCategory = 'pulses';
+      else if (activeFilterBtn.innerText.includes('Water')) activeCategory = 'water';
+
+      filterCatalog(activeCategory, activeFilterBtn);
+    });
+  </script>
+</body>
+</html>

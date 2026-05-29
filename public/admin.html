@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Kirti Gold Industries</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/images/logo2.png">
+  <link rel="apple-touch-icon" href="/images/logo2.png">
+</head>
+<body>
+
+  <!-- 1. Secure Authentication Shield Overlay -->
+  <div class="admin-login-wrapper" id="loginWrapper">
+    <div class="admin-login-box">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <span class="text-gradient" style="font-family: var(--font-headings); font-weight: 800; font-size: 1.8rem; letter-spacing: 1px;">KIRTI GOLD</span>
+        <div style="font-size: 0.75rem; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase;">Central Operations</div>
+      </div>
+      <h2 class="admin-login-title text-gradient">Admin Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="adminPassword">Operational Password *</label>
+          <input type="password" id="adminPassword" class="form-control" placeholder="Enter secure password" required autofocus>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Authenticate</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Main Dashboard panel -->
+  <div class="admin-container" id="dashboardWrapper" style="display: none;">
+    <!-- Sidebar Menu -->
+    <aside class="admin-sidebar">
+      <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1.5rem;">
+        <span class="text-gradient" style="font-family: var(--font-headings); font-weight: 800; font-size: 1.3rem;">ADMIN PORTAL</span>
+        <span style="display: block; font-size: 0.7rem; color: var(--success); font-weight: 600; margin-top: 0.2rem;">● SECURE CONSOLE</span>
+      </div>
+
+      <nav style="flex: 1;">
+        <ul class="admin-menu">
+          <li class="admin-menu-item active" data-tab="enquiries">
+            <span>✉</span> Product Inquiries
+          </li>
+          <li class="admin-menu-item" data-tab="applications">
+            <span>💼</span> Onboarding Leads
+          </li>
+          <li class="admin-menu-item" data-tab="subscribers">
+            <span>📧</span> Newsletter Signups
+          </li>
+        </ul>
+      </nav>
+
+      <button id="logoutBtn" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem; padding: 0.6rem 1rem;">Exit Console</button>
+    </aside>
+
+    <!-- Operational Dashboard Content -->
+    <main class="admin-content">
+      <!-- Header -->
+      <div class="admin-header">
+        <div>
+          <h1 class="text-gradient" style="font-size: 2.2rem; font-weight: 800;">MANAGEMENT PANEL</h1>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Analyze incoming lead generation feeds, client enquiries, and retail partners.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--dark-border); padding: 0.8rem 1.5rem; border-radius: 8px;">
+          <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Authorized Operator</span>
+          <strong style="color: var(--primary); font-size: 0.95rem;">cpd@kirtigroup.com</strong>
+        </div>
+      </div>
+
+      <!-- Live Aggregated Statistics Row -->
+      <div class="analytics-grid">
+        <div class="analytics-card">
+          <div class="analytics-icon">✉</div>
+          <div>
+            <div class="analytics-num" id="statTotalEnquiries">0</div>
+            <div class="analytics-label">Product Inquiries</div>
+          </div>
+        </div>
+
+        <div class="analytics-card">
+          <div class="analytics-icon">💼</div>
+          <div>
+            <div class="analytics-num" id="statTotalApplications">0</div>
+            <div class="analytics-label">Partner Applications</div>
+          </div>
+        </div>
+
+        <div class="analytics-card">
+          <div class="analytics-icon">📧</div>
+          <div>
+            <div class="analytics-num" id="statTotalSubscribers">0</div>
+            <div class="analytics-label">Newsletter Subscribers</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Panel (Search, Export) -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; gap: 0.5rem; align-items: center; background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: 50px; padding: 0.2rem 1rem; width: 100%; max-width: 400px;">
+          <span style="color: var(--text-muted); font-size: 1rem;">🔍</span>
+          <input type="text" id="tableSearch" placeholder="Search inquiries..." style="flex: 1; border: none; background: transparent; color: var(--text-primary); padding: 0.6rem 0.5rem; outline: none; font-family: var(--font-body); font-size: 0.9rem;">
+        </div>
+
+        <button id="exportBtn" class="btn btn-primary" style="padding: 0.7rem 1.6rem; font-size: 0.9rem; border-radius: 4px; display: flex; align-items: center; gap: 8px;">
+          📥 Export CSV Dataset
+        </button>
+      </div>
+
+      <!-- Data Record Table -->
+      <div class="table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr id="tableHeaderRow">
+              <!-- Dynamically populated via JS -->
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Dynamically populated via JS -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
