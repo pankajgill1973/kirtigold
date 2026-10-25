@@ -14,7 +14,7 @@
   // Define a local binding to the global function for clean execution
   const showToast = window.showToast;
 
-  let adminToken = localStorage.getItem('kirti_admin_token') || '';
+  let adminToken = sessionStorage.getItem('kirti_admin_token') || '';
 let loadedData = { subscribers: [], enquiries: [], applications: [] };
 let activeTab = 'enquiries';
 
@@ -65,7 +65,7 @@ function setupEventListeners() {
 
         if (result.success) {
           adminToken = result.token;
-          localStorage.setItem('kirti_admin_token', adminToken);
+          sessionStorage.setItem('kirti_admin_token', adminToken);
           showToast('Login successful!', 'success');
           showDashboardView();
           loadDashboardData();
@@ -81,11 +81,21 @@ function setupEventListeners() {
   // Logout Trigger
   const logoutBtn = document.getElementById('logoutBtn');
   if (logoutBtn) {
-    logoutBtn.addEventListener('click', () => {
-      localStorage.removeItem('kirti_admin_token');
-      adminToken = '';
-      showToast('Logged out successfully.', 'info');
-      showLoginView();
+    logoutBtn.addEventListener('click', async () => {
+      try {
+        if (adminToken) {
+          await fetch('/api/admin/logout', {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${adminToken}` }
+          });
+        }
+      } finally {
+        sessionStorage.removeItem('kirti_admin_token');
+        adminToken = '';
+        loadedData = { subscribers: [], enquiries: [], applications: [] };
+        showLoginView();
+        showToast('Logged out successfully.', 'info');
+      }
     });
   }
 
@@ -150,7 +160,7 @@ async function loadDashboardData() {
 
     if (response.status === 401) {
       // Token expired or invalid
-      localStorage.removeItem('kirti_admin_token');
+      sessionStorage.removeItem('kirti_admin_token');
       showLoginView();
       showToast('Session expired. Please log in again.', 'error');
       return;
@@ -330,20 +340,21 @@ function exportToCSV() {
     rows = dataset.map(item => [item.id, item.companyName, item.contactPerson, item.email, item.phone, item.state, item.city, item.experience, item.investment, item.message, item.createdAt, item.status]);
   }
 
-  // Build CSV payload
-  let csvContent = "data:text/csv;charset=utf-8,";
-  csvContent += headers.map(h => `"${h.replace(/"/g, '""')}"`).join(',') + "\r\n";
+  // Escape CSV fields and neutralize spreadsheet formula prefixes from untrusted submissions.
+  function safeCsvCell(value) {
+    let str = String(value === null || value === undefined ? '' : value);
+    if (/^[\\s\\u0000-\\u001f]*[=+\\-@]/.test(str)) str = "'" + str;
+    return `"${str.replace(/"/g, '""')}"`;
+  }
 
+  let csvContent = headers.map(safeCsvCell).join(',') + "\r\n";
   rows.forEach(row => {
-    let formattedRow = row.map(val => {
-      let str = String(val === null || val === undefined ? '' : val);
-      return `"${str.replace(/"/g, '""')}"`;
-    }).join(',');
-    csvContent += formattedRow + "\r\n";
+    csvContent += row.map(safeCsvCell).join(',') + "\r\n";
   });
 
-  // Trigger download link
-  const encodedUri = encodeURI(csvContent);
+  // Use a Blob so special characters are encoded safely.
+  const csvBlob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const encodedUri = URL.createObjectURL(csvBlob);
   const link = document.createElement("a");
   link.setAttribute("href", encodedUri);
   link.setAttribute("download", `kirtigold_${activeTab}_export_${Date.now()}.csv`);
