@@ -14,7 +14,7 @@
   // Define a local binding to the global function for clean execution
   const showToast = window.showToast;
 
-  let adminToken = localStorage.getItem('kirti_admin_token') || '';
+  let adminToken = sessionStorage.getItem('kirti_admin_token') || '';
 let loadedData = { subscribers: [], enquiries: [], applications: [] };
 let activeTab = 'enquiries';
 
@@ -65,7 +65,7 @@ function setupEventListeners() {
 
         if (result.success) {
           adminToken = result.token;
-          localStorage.setItem('kirti_admin_token', adminToken);
+          sessionStorage.setItem('kirti_admin_token', adminToken);
           showToast('Login successful!', 'success');
           showDashboardView();
           loadDashboardData();
@@ -90,7 +90,7 @@ function setupEventListeners() {
           });
         }
       } finally {
-        localStorage.removeItem('kirti_admin_token');
+        sessionStorage.removeItem('kirti_admin_token');
         adminToken = '';
         loadedData = { subscribers: [], enquiries: [], applications: [] };
         showLoginView();
@@ -160,7 +160,7 @@ async function loadDashboardData() {
 
     if (response.status === 401) {
       // Token expired or invalid
-      localStorage.removeItem('kirti_admin_token');
+      sessionStorage.removeItem('kirti_admin_token');
       showLoginView();
       showToast('Session expired. Please log in again.', 'error');
       return;
